@@ -23,17 +23,15 @@ const cakeMessage = document.getElementById("cakeMessage");
 const blowInstruction = document.getElementById("blowInstruction");
 
 if (candleFlame) {
-  candleFlame.addEventListener("click", () => {
-    if (candleFlame.classList.contains("blown")) return;
-
-    candleFlame.classList.add("blown");
+  candleFlame.addEventListener("click", function () {
+    this.classList.add("blown");
 
     cakeMessage.textContent = "Your wish is coming true, Blessing! ♡";
     blowInstruction.textContent = "Happy birthday, my best girl!";
 
-    candleFlame.setAttribute("aria-label", "The candle has been blown out");
-    candleFlame.disabled = true;
+    this.disabled = true;
   });
+}
 }
 
 
