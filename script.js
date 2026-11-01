@@ -1,6 +1,4 @@
 
-"use strict";
-
 // SCROLL REVEAL
 const revealItems = document.querySelectorAll(".reveal");
 
