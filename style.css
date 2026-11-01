@@ -223,22 +223,23 @@ h2 {
 .flame {
   position: absolute;
   bottom: 225px;
-  width: 30px;
-  height: 62px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 65px;
   padding: 0;
-  border: 0;
+  border: none;
   background: transparent;
   cursor: pointer;
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+  z-index: 10;
 }
 
 .flame::before {
   content: "";
   position: absolute;
   bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 9px;
   height: 43px;
   background: repeating-linear-gradient(
@@ -252,6 +253,8 @@ h2 {
 .flame-fire {
   position: absolute;
   top: 0;
+  left: 50%;
+  transform: translateX(-50%);
   width: 14px;
   height: 19px;
   border-radius: 80% 20% 70% 30%;
@@ -265,34 +268,20 @@ h2 {
   animation: flicker .8s infinite alternate;
 }
 
-@keyframes flicker {
-  to {
-    transform: rotate(-12deg) scale(.85);
-  }
-}
-
 .flame.blown .flame-fire {
-  opacity: 0;
-  transform: scale(0);
-  animation: none;
+  display: none;
 }
 
 .flame.blown::after {
   content: "";
   position: absolute;
   top: -12px;
+  left: 50%;
   width: 12px;
   height: 20px;
   border-radius: 50%;
   background: rgba(150, 150, 150, .4);
   animation: smoke 1.5s ease-out forwards;
-}
-
-@keyframes smoke {
-  to {
-    transform: translateY(-28px) scale(2);
-    opacity: 0;
-  }
 }
 
 #cakeMessage {
